@@ -45,7 +45,7 @@ defmodule Cards do
   end
 
   @doc """
-  Checks if a deck contains a specific card.
+  Determines whether a deck contains a given card
 
   ## Examples
       iex> deck = Cards.create_deck()

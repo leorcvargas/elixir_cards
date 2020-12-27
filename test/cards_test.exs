@@ -2,8 +2,23 @@ defmodule CardsTest do
   use ExUnit.Case
   doctest Cards
 
-  test "should create a deck with 52 cards" do
+  test "create_deck makes 52 cards" do
+    deck_length = length(Cards.create_deck())
+    assert deck_length == 52
+  end
+
+  test "shuffling a deck randomizes its cards positions" do
     deck = Cards.create_deck()
-    assert(length(deck) === 52)
+    refute deck == Cards.shuffle(deck)
+  end
+
+  test "contains should return true" do
+    deck = Cards.create_deck()
+    assert Cards.contains?(deck, "Ace of Spades") == true
+  end
+
+  test "contains should return false" do
+    deck = Cards.create_deck()
+    refute Cards.contains?(deck, "Unexistent card") == true
   end
 end

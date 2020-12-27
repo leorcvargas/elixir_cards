@@ -7,9 +7,7 @@ defmodule Cards do
   Returns a list of strings that represents a deck of cards
 
   ## Examples
-      iex> deck = Cards.create_deck()
-      iex> deck
-      ["Ace of Spades", "Two of Spades", "Three of Spades", ...]
+      iex> Cards.create_deck()
   """
   def create_deck do
     values = [
@@ -40,9 +38,7 @@ defmodule Cards do
 
   ## Examples
       iex> deck = Cards.create_deck()
-      ["Ace of Spades", "Two of Spades", "Three of Spades", ...]
-      iex> shuffled_deck = Cards.shuffle(deck)
-      ["King of Clubs", "Three of Hearts", "Two of Spades", ...]
+      iex> Cards.shuffle(deck)
   """
   def shuffle(deck) do
     Enum.shuffle(deck)
@@ -67,7 +63,7 @@ defmodule Cards do
 
   ## Examples
       iex> deck = Cards.create_deck()
-      iex> { hand, deck } = Cards.deal(deck, 1)
+      iex> { hand, _deck } = Cards.deal(deck, 1)
       iex> hand
       ["Ace of Spades"]
   """
@@ -81,7 +77,7 @@ defmodule Cards do
 
   ## Examples
       iex> deck = Cards.create_deck()
-      iex> { hand, deck } = Cards.save_to_file(deck, "my_deck")
+      iex> Cards.save_to_file(deck, "my_deck")
       :ok
   """
   def save_to_file(deck, filename) do
@@ -96,12 +92,10 @@ defmodule Cards do
 
   ## Examples
   If the file exists:
-      iex> deck = Cards.load_file("my_deck")
-      iex> deck
-      ["Ace of Spades", "Two of Spades", "Three of Spades", ...]
+      iex> Cards.load_file("my_deck")
 
   If the file can't be found:
-      iex> deck = Cards.load_file("wrong_name")
+      iex> Cards.load_file("wrong_name")
       "File 'wrong_name' does not exist"
   """
   def load_file(filename) do
@@ -117,10 +111,7 @@ defmodule Cards do
   deck.
 
   ## Examples
-      iex> { hand, deck } = Cards.create_hand(5)
-      {["Two of Spades", "Seven of Hearts", "Ten of Clubs", "Two of Clubs",
-      "Seven of Diamonds"],
-      ["Five of Hearts", "Queen of Diamonds", "Five of Diamonds", ...]}
+      iex> Cards.create_hand(5)
   """
   def create_hand(hand_size) do
     Cards.create_deck()

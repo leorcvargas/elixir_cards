@@ -1,4 +1,7 @@
 defmodule Cards do
+  @moduledoc """
+  Provides methods for creating and handling a deck of cards
+  """
   def create_deck do
     values = [
       "Ace",
@@ -18,12 +21,9 @@ defmodule Cards do
 
     suits = ["Spades", "Clubs", "Hearts", "Diamonds"]
 
-    nested_cards =
-      for suit <- suits, value <- values do
-        "#{value} #{suit}"
-      end
-
-    List.flatten(nested_cards)
+    for suit <- suits, value <- values do
+      "#{value} #{suit}"
+    end
   end
 
   def shuffle(deck) do

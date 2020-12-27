@@ -1,6 +1,6 @@
 # Cards
 
-**TODO: Add description**
+Module created while doing the Stephen Grider course.
 
 ## Installation
 

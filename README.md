@@ -1,6 +1,6 @@
 # Cards
 
-Module created while doing the Stephen Grider course.
+A deck of cards module created while doing the Stephen Grider course.
 
 ## Installation
 
